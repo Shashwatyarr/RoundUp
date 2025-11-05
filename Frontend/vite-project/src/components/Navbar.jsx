@@ -48,6 +48,17 @@ export default function Navbar() {
             <Link to="/campaigns/create" className="hover:text-green-700">
               Fundraise
             </Link>
+            
+            {/* --- YAHAN ADD KIYA HAI --- */}
+            <Link 
+              to="/leaderboard" 
+              className="hover:text-green-700 flex items-center gap-1.5"
+            >
+              <i className="fa-solid fa-ranking-star text-green-600"></i>
+              Leaderboard
+            </Link>
+            {/* --- END --- */}
+
           </div>
         </div>
 

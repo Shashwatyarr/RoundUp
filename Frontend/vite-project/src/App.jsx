@@ -9,6 +9,7 @@ import Campaign from "./pages/Campaign";
 import Donate from "./pages/Donate";
 import Footer from "./components/footer";
 import AuthPage from "./pages/signup";
+import Leaderboard from "./pages/Leaderboard";
 
 export default function App(){
   return (
@@ -23,6 +24,7 @@ export default function App(){
           <Route path="/campaigns/:id" element={<Campaign />} />
           <Route path="/donate/:id" element={<Donate />} />
           <Route path="/signup" element={<AuthPage/>} />
+          <Route path="/leaderboard" element={<Leaderboard/>} />
         </Routes>
       </div>
       <Footer/>
