@@ -10,6 +10,7 @@ import Donate from "./pages/Donate";
 import Footer from "./components/footer";
 import AuthPage from "./pages/signup";
 import Leaderboard from "./pages/Leaderboard";
+import RegisterNGO from "./pages/registerNGO";
 
 export default function App(){
   return (
@@ -25,6 +26,7 @@ export default function App(){
           <Route path="/donate/:id" element={<Donate />} />
           <Route path="/signup" element={<AuthPage/>} />
           <Route path="/leaderboard" element={<Leaderboard/>} />
+          <Route path="/register" element={<RegisterNGO/>}/>
         </Routes>
       </div>
       <Footer/>

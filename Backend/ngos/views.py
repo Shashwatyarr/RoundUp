@@ -6,13 +6,9 @@ from django.shortcuts import get_object_or_404
 
 from .models import NGOProfile, Document, Campaign
 from .serializers import NGOProfileSerializer, CampaignSerializer
-from .permissions import IsAdminApiKey
+from .permissions import IsAdminApiKey  # if missing, keep your own permission or remove usage
 
-
-# -------------------------------------------
-# NGO Registration & Verification
-# -------------------------------------------
-
+# ---------- NGO endpoints (unchanged) ----------
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def register_ngo(request):
@@ -32,7 +28,7 @@ def register_ngo(request):
         }
     )
 
-    # Save documents
+    # Save documents if provided
     for doc in data.get("documents", []):
         Document.objects.create(
             ngo=ngo,
@@ -42,13 +38,11 @@ def register_ngo(request):
 
     return Response(NGOProfileSerializer(ngo).data, status=201 if created else 200)
 
-
 @api_view(["GET"])
 @permission_classes([IsAdminApiKey])
 def list_ngos(request):
     ngos = NGOProfile.objects.all().order_by("-created_at")
     return Response(NGOProfileSerializer(ngos, many=True).data)
-
 
 @api_view(["POST"])
 @permission_classes([IsAdminApiKey])
@@ -58,7 +52,6 @@ def verify_ngo(request, ngo_id):
     ngo.save()
     return Response({"message": "NGO verified"})
 
-
 @api_view(["POST"])
 @permission_classes([IsAdminApiKey])
 def reject_ngo(request, ngo_id):
@@ -67,23 +60,33 @@ def reject_ngo(request, ngo_id):
     ngo.save()
     return Response({"message": "NGO rejected"})
 
-
-# -------------------------------------------
-# NEW FEATURE: Campaign Create + List
-# -------------------------------------------
+# ---------- Campaign endpoints (JSON-based, image_url expects a URL string) ----------
 @api_view(["POST"])
-@permission_classes([AllowAny])  # Anyone can create a campaign
+@permission_classes([AllowAny])
 def create_campaign(request):
+    """
+    Expect JSON:
+    {
+      "title": "abc",
+      "goal": 50000,
+      "story": "desc",
+      "image_url": "https://... (optional)"
+    }
+    """
     serializer = CampaignSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
-        return Response(serializer.data, status=201)
-    return Response(serializer.errors, status=400)
-
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+    return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 @api_view(["GET"])
-@permission_classes([AllowAny])  # Anyone can view campaigns
+@permission_classes([AllowAny])
 def list_campaigns(request):
     campaigns = Campaign.objects.all().order_by("-created_at")
-    serializer = CampaignSerializer(campaigns, many=True)
-    return Response(serializer.data)
+    return Response(CampaignSerializer(campaigns, many=True).data)
+
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def campaign_detail(request, pk):
+    camp = get_object_or_404(Campaign, pk=pk)
+    return Response(CampaignSerializer(camp).data)
