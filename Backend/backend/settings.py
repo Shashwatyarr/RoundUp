@@ -20,9 +20,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "ngos",
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware", 
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -74,3 +76,6 @@ REST_FRAMEWORK = {
 }
 
 ADMIN_API_KEY = os.getenv("ADMIN_API_KEY", "")
+
+# Allow frontend (React) to communicate with backend
+CORS_ALLOW_ALL_ORIGINS = True
