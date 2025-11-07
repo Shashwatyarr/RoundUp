@@ -105,7 +105,7 @@ export default function Home() {
       {/* --- Hero Section --- */}
       <main>
         {/* Relative container for absolute positioning */}
-        <div className="relative max-w-6xl mx-auto mt-12 md:mt-24 mb-24" style={{ height: "600px" }}>
+        <div className="relative max-w-6xl mx-auto mt-6 md:mt-12 mb-24" style={{ height: "600px" }}>
           
           {/* 1. Central Text Content */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center z-10 w-full px-4">

@@ -68,11 +68,11 @@ function AuthPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-200">
+    <div className="flex min-h-screen items-center justify-center bg-gray-300">
       <div className="bg-white rounded-2xl shadow-lg px-8 py-10 w-full max-w-md">
         <h2 className="text-center text-2xl font-bold mb-2">Welcome</h2>
         <p className="text-center mb-4">
-          {isSignup ? "Sign up" : "Sign in"} to GoFundMe to continue.
+          {isSignup ? "Sign up" : "Sign in"} to RoundUp to continue.
         </p>
 
         {/* OAuth Buttons */}

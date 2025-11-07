@@ -13,8 +13,8 @@ const footerLinks = [
   {
     title: 'Learn',
     links: [
-      { name: 'How GoFundMe works', path: '#' },
-      { name: 'Why GoFundMe', path: '#' },
+      { name: 'How RoundUp works', path: '#' },
+      { name: 'Why RoundUp', path: '#' },
       { name: 'Common questions', path: '#' },
       { name: 'Success stories', path: '#' },
     ],
@@ -34,7 +34,7 @@ const footerLinks = [
     links: [
       { name: 'Help center', path: '#' },
       { name: 'Blog', path: '#' },
-      { name: 'GoFundMe Stories', path: '#' },
+      { name: 'RoundUp Stories', path: '#' },
       { name: 'Press center', path: '#' },
       { name: 'Careers', path: '#' },
     ],
@@ -42,7 +42,7 @@ const footerLinks = [
   {
     title: 'About',
     links: [
-      { name: 'About GoFundMe', path: '#' },
+      { name: 'About RoundUp', path: '#' },
       { name: 'Our team', path: '#' },
       { name: 'In the news', path: '#' },
     ],
