@@ -78,7 +78,7 @@ export default function Footer() {
         {/* --- Top Section: Logo and Social --- */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
           <Link to="/" className="text-3xl font-bold text-white">
-            gofundme
+            RoundUp
           </Link>
           <SocialIcons />
         </div>
@@ -106,7 +106,7 @@ export default function Footer() {
         {/* --- Bottom Section: Legal & Copyright --- */}
         <div className="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
           <p className="mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} GoFundMe, Inc.
+            &copy; {new Date().getFullYear()} RoundUp, Inc.
           </p>
           <div className="flex gap-6">
             <Link to="/terms" className="hover:underline">Terms</Link>

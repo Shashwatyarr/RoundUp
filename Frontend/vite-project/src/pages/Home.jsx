@@ -118,10 +118,10 @@ export default function Home() {
               start here
             </h1>
             <Link
-              to="/start-campaign"
+              to="/campaign/create"
               className="inline-block bg-green-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-green-700 transition-colors"
             >
-              Start a GoFundMe
+              Start a RoundUp
             </Link>
           </div>
 
@@ -142,7 +142,7 @@ export default function Home() {
           <p className="text-xl md:text-2xl font-bold text-gray-800">
             More than $50 million is raised
             <br />
-            every week on GoFundMe.*
+            every week on RoundUp.*
           </p>
         </div>
       </main>
@@ -152,7 +152,7 @@ export default function Home() {
         
         {/* --- Heading --- */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-12 md:mb-20">
-          Fundraising on GoFundMe is easy, powerful, and trusted
+          Fundraising on RoundUp is easy, powerful, and trusted
         </h2>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -205,7 +205,7 @@ export default function Home() {
                 <BsLink45Deg className="text-2xl flex-shrink-0" />
                 <div>
                   <div className="font-bold">Copy link</div>
-                  <div className="text-sm opacity-80">gofund.me/fundraiserurl</div>
+                  <div className="text-sm opacity-80">RoundUp.me/fundraiserurl</div>
                 </div>
               </div>
             </div>
@@ -249,7 +249,7 @@ export default function Home() {
           </p>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            GoFundMe is a trusted leader in online fundraising.
+            RoundUp is a trusted leader in online fundraising.
             With <a href="#" className="underline hover:no-underline">simple pricing</a> and a team of <a href="#" className="underline hover:no-underline">Trust & Safety</a> experts in your corner, you can raise money or make a donation with peace of mind.
           </h2>
 
@@ -258,7 +258,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 text-sm mt-8 opacity-90 hover:opacity-100 underline"
           >
             <BsShieldCheck className="text-lg" />
-            Read the GoFundMe Giving Guarantee
+            Read the RoundUp Giving Guarantee
           </a>
         </div>
         

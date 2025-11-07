@@ -36,7 +36,7 @@ export default function Navbar() {
         {/* Left Nav */}
         <div className="flex items-center gap-6">
           <Link to="/" className="text-xl font-bold text-gray-800">
-            gofundme
+            RoundUp
           </Link>
           <div className="hidden md:flex items-center gap-4 text-sm font-medium text-gray-600">
             <Link to="/search" className="hover:text-green-700">
@@ -97,7 +97,7 @@ export default function Navbar() {
             to="/start-campaign"
             className="bg-green-600 text-white px-4 py-2 rounded-md text-sm font-semibold hover:bg-green-700 transition-colors"
           >
-            Start a GoFundMe
+            Start a RoundUp
           </Link>
         </div>
       </nav>
